@@ -6,6 +6,19 @@ April 30, 2015
 ## Author
 Ben Cornelis
 
+## About
+
+Here is the app on Heroku:
+https://peaceful-dawn-9303.herokuapp.com/
+
+In the version below I added more features, such as letting users edit the definitions,
+but I couldn't find a way to implement them except by putting more and more code in the routes and views.
+
+Here it is on Heroku:
+https://serene-waters-8204.herokuapp.com/
+And the github link:
+https://github.com/cneb78/dictionary
+
 ## Installation
 
 
