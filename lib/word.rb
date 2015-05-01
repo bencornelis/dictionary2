@@ -1,9 +1,9 @@
 class Word
   @@words = []
-  attr_reader(:word, :definitions)
+  attr_reader(:string_form, :definitions)
 
   define_method(:initialize) do |attributes|
-    @word = attributes[:word]
+    @string_form = attributes[:string_form]
     @definitions = []
   end
 
@@ -21,6 +21,14 @@ class Word
 
   define_singleton_method(:clear) do
     @@words = []
+  end
+
+  define_singleton_method(:find) do |word_string|
+    @@words.each() do |word|
+      if word.string_form() == word_string
+        return word
+      end
+    end
   end
 
 end

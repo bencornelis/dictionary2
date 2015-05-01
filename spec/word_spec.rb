@@ -7,17 +7,17 @@ describe(Word) do
   before () do
     Word.clear()
   end
-  
+
   describe('#word') do
     it('returns the word') do
-      test_word = Word.new({:word => 'run'})
-      expect(test_word.word()).to(eq('run'))
+      test_word = Word.new({:string_form => 'run'})
+      expect(test_word.string_form()).to(eq('run'))
     end
   end
 
   describe('#definitions') do
     it('is empty at first') do
-      test_word = Word.new({:word => 'run'})
+      test_word = Word.new({:string_form => 'run'})
       expect(test_word.definitions()).to(eq([]))
     end
   end
@@ -40,7 +40,7 @@ describe(Word) do
 
   describe('#save') do
     it('adds a word to the words array') do
-      test_word = Word.new({:word => 'run'})
+      test_word = Word.new({:string_form => 'run'})
       test_word.save()
       expect(Word.all()).to(eq([test_word]))
     end
@@ -48,10 +48,18 @@ describe(Word) do
 
   describe('.clear') do
     it('emptys the word array') do
-      test_word = Word.new({:word => 'run'})
+      test_word = Word.new({:string_form => 'run'})
       test_word.save()
       Word.clear()
       expect(Word.all()).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it('finds a word based on its string form') do
+      test_word = Word.new({:string_form => 'run'})
+      test_word.save()
+      expect(Word.find('run')).to(eq(test_word))
     end
   end
 end
