@@ -5,9 +5,9 @@
 <ul>
   <% @word.definitions.each() do |definition| %>
     <li class="list-group-item"><mark><%= definition.part_of_speech() %></mark>
-      <ol>
+      <ul>
         <li><%= definition.meaning() %></li>
-      </ol>
+      </ul>
     </li>
   <% end %>
 </ul>
