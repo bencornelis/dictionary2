@@ -1,5 +1,5 @@
-<h1>Please enter the new definition:</h1>
-<form class="form-inline" action="/words/<%= @string_form %>" method="post">
+<h1>Please enter a new definition:</h1>
+<form class="form-inline form" action="/words/<%= @string_form %>" method="post">
   <div class="form-group">
     <label for="part_of_speech">Part of speech:</label>
     <input type="text" id="part_of_speech" name="part_of_speech" class="form-control">
@@ -9,4 +9,4 @@
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
-<a href="/">Dictionary</a>
+<a href="/" class="home">Dictionary</a>
