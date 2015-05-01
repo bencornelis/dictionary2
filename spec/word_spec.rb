@@ -11,7 +11,7 @@ describe(Word) do
   end
 
   describe('#definitions') do
-    it('returns a list of definitions of the word') do
+    it('is empty at first') do
       test_word = Word.new({:word => 'run'})
       expect(test_word.definitions()).to(eq([]))
     end
@@ -24,6 +24,20 @@ describe(Word) do
         :meaning => 'move at a speed faster than a walk'})
       test_word.add_definition(test_definition)
       expect(test_word.definitions()).to(eq([test_definition]))
+    end
+  end
+
+  describe('.all') do
+    it('is empty at first') do
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('adds a word to the words array') do
+      test_word = Word.new({:word => 'run'})
+      test_word.save()
+      expect(Word.all()).to(eq([test_word]))
     end
   end
 end
