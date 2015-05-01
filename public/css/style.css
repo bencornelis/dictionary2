@@ -11,11 +11,6 @@ h1 {
   font-size: 20px;
 }
 
-.btn-add {
-  margin-top: 20px;
-  margin-left: 40px;
-}
-
 .form {
   margin-left:50px;
   width:800px;
@@ -30,4 +25,8 @@ h1 {
   position:absolute;
   right: 10px;
   top: 10px;
+}
+
+.btn-add {
+  margin-left: 20px;
 }

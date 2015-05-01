@@ -1,9 +1,14 @@
-<h1>Word: <%= @word.string_form() %></h1>
-<a type="button" class="btn btn-info" href="/words/<%= @word.string_form() %>/definitions/new">Add definition</a>
+<h1><%= @word.string_form() %>
+<a type="button" class="btn btn-info btn-add" href="/words/<%= @word.string_form() %>/definitions/new">Add definition</a>
+</h1>
+<hr>
 <ul>
   <% @word.definitions.each() do |definition| %>
-    <li><%= definition.part_of_speech() %>: <%= definition.meaning() %></li>
+    <li class="list-group-item"><mark><%= definition.part_of_speech() %></mark>
+      <ol>
+        <li><%= definition.meaning() %></li>
+      </ol>
+    </li>
   <% end %>
 </ul>
-
 <a href="/" class="home">Dictionary</a>
