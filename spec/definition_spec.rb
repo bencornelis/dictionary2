@@ -9,10 +9,10 @@ describe(Definition) do
     end
   end
 
-  describe('#statement') do
+  describe('#meaning') do
     it('returns the meaning of the word') do
-      test_definition = Definition.new({:statement => 'set to the value'})
-      expect(test_definition.statement()).to(eq('set to the value'))
+      test_definition = Definition.new({:meaning => 'set to the value'})
+      expect(test_definition.meaning()).to(eq('set to the value'))
     end
   end
 end
