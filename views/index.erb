@@ -1,2 +1,7 @@
 <h1>Welcome to your Dictionary</h1>
 <a href="/words/new" type='button' class='btn btn-success'>Add word</a>
+<ul>
+  <% @words.each() do |word| %>
+    <li><%= word.word() %></li>
+  <% end %>
+</ul>
