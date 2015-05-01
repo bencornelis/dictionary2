@@ -10,8 +10,11 @@ get('/') do
 end
 
 post('/success') do
-  @new_word = Word.new({:string_form => params.fetch('word')})
-  @new_word.save()
+  @word = Word.new({:string_form => params.fetch('word')})
+  @new_word = Word.find(@word.string_form()) == nil
+  if @new_word
+    @word.save()
+  end
   erb(:success)
 end
 

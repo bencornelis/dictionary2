@@ -61,5 +61,23 @@ describe(Word) do
       test_word.save()
       expect(Word.find('run')).to(eq(test_word))
     end
+
+    it('returns nil if the word has not been saved') do
+      test_word = Word.new({:string_form => 'fun'})
+      expect(Word.find('fun')).to(eq(nil))
+    end
   end
+
+  # describe('#new_word?') do
+  #   it('is true if there is no saved word with the same string_form') do
+  #     test_word = Word.new({:string_form => 'fun'})
+  #     expect(test_word.new_word?()).to(eq(true))
+  #   end
+  #
+  #   it('is false if a word with the same string_form has been saved') do
+  #     previous_word = Word.new({:string_form => 'fun'})
+  #     test_word = Word.new({:string_form => 'fun'})
+  #     expect(test_word.new_word?()).to(eq(false))
+  #   end
+  # end
 end

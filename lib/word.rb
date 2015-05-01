@@ -29,6 +29,7 @@ class Word
         return word
       end
     end
+    nil
   end
 
 end

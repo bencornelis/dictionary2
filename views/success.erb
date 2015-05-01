@@ -1,2 +1,6 @@
-<h1>You have successfully added the word <strong><%= @new_word.string_form() %></strong>!</h1>
+<% if @new_word %>
+  <h1>You have successfully added the word <strong><%= @word.string_form() %></strong>!</h1>
+<% else %>
+  <h1>The word <strong><%= @word.string_form() %></strong> is already in your dictionary.</h1>
+<% end %>
 <a href="/">Go back to the Dictionary</a>

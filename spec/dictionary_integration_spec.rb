@@ -19,6 +19,18 @@ describe('the word path', {:type => :feature}) do
     click_link('Go back to the Dictionary')
     expect(page).to have_content('run')
   end
+
+  it('will not allow a word to be added twice') do
+    Word.clear()
+    visit('/words/new')
+    fill_in('word', :with => 'run')
+    click_button('Submit')
+    click_link('Go back to the Dictionary')
+    click_link('Add word')
+    fill_in('word', :with => 'run')
+    click_button('Submit')
+    expect(page).to have_content('The word run is already in your dictionary.')
+  end
 end
 
 describe('the definition path', {:type => :feature}) do
