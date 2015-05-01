@@ -1,0 +1,11 @@
+<h1>Word: <%= @word.string_form() %></h1>
+<a type="button" class="btn btn-info" href="/words/<%= @word.string_form() %>/definitions/new">Add definition</a>
+<% unless @word.definitions().empty?() %>
+  <ul>
+    <% @word.definitions.each() do |definition| %>
+      <li><%= definition.part_of_speech() %>: <%= definition.meaning() %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<a href="/">Dictionary</a>

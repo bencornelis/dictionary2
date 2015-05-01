@@ -31,6 +31,16 @@ describe('the word path', {:type => :feature}) do
     click_button('Submit')
     expect(page).to have_content('The word run is already in your dictionary.')
   end
+
+  it('allows a user to remove a word') do
+    Word.clear()
+    visit('/words/new')
+    fill_in('word', :with => 'run')
+    click_button('Submit')
+    click_link('Go back to the Dictionary')
+    click_link('run_remove')
+    expect(page).to have_no_content('run')
+  end
 end
 
 describe('the definition path', {:type => :feature}) do

@@ -9,6 +9,12 @@ get('/') do
   erb(:index)
 end
 
+get('/removeword/:string_form') do
+  Word.delete(params.fetch('string_form'))
+  @words = Word.all()
+  erb(:index)
+end
+
 post('/success') do
   @word = Word.new({:string_form => params.fetch('word')})
   @new_word = Word.find(@word.string_form()) == nil

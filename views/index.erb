@@ -1,7 +1,13 @@
 <h1>Welcome to your Dictionary</h1>
 <a href="/words/new" type='button' class='btn btn-success'>Add word</a>
-<ul>
+
+<% unless @words.empty? %>
+<ul class="list-unstyled list-group">
   <% @words.each() do |word| %>
-    <li><a href="/words/<%= word.string_form() %>"><%= word.string_form() %></a></li>
+    <li class="list-group-item">
+      <a href="/words/<%= word.string_form() %>"><%= word.string_form() %></a>
+      <a id = "<%= word.string_form() %>_remove" href="/removeword/<%= word.string_form() %>" type="button" class="btn btn-danger">remove</a>
+    </li>
   <% end %>
 </ul>
+<% end %>

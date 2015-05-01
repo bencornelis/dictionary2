@@ -68,6 +68,22 @@ describe(Word) do
     end
   end
 
+  describe('.delete') do
+    it('does nothing if the word is not in the array') do
+      test_word = Word.new({:string_form => 'run'})
+      test_word.save()
+      Word.delete('animal')
+      expect(Word.all()).to(eq([test_word]))
+    end
+
+    it('removes the word with the specified string_form') do
+      test_word = Word.new({:string_form => 'run'})
+      test_word.save()
+      Word.delete('run')
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
   # describe('#new_word?') do
   #   it('is true if there is no saved word with the same string_form') do
   #     test_word = Word.new({:string_form => 'fun'})

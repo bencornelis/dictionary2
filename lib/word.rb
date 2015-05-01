@@ -32,4 +32,8 @@ class Word
     nil
   end
 
+  define_singleton_method(:delete) do |remove_word|
+    @@words.select! {|word| word.string_form() != remove_word}
+  end
+
 end
