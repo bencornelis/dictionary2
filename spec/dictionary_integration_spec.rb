@@ -23,6 +23,7 @@ end
 
 describe('the definition path', {:type => :feature}) do
   it('processes user input for new definition and displays it on the word page') do
+    Word.clear()
     visit('/words/new')
     fill_in('word', :with => 'run')
     click_button('Submit')
