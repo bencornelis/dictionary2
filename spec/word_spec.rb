@@ -16,4 +16,14 @@ describe(Word) do
       expect(test_word.definitions()).to(eq([]))
     end
   end
+
+  describe('#add_definition') do
+    it('adds a definition to the definition list') do
+      test_word = Word.new({:word => 'run'})
+      test_definition = Definition.new({:part_of_speech =>'verb',
+        :meaning => 'move at a speed faster than a walk'})
+      test_word.add_definition(test_definition)
+      expect(test_word.definitions()).to(eq([test_definition]))
+    end
+  end
 end
