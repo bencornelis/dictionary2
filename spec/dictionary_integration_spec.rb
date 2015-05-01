@@ -16,7 +16,7 @@ describe('the word path', {:type => :feature}) do
     visit('/words/new')
     fill_in('word', :with => 'run')
     click_button('Submit')
-    click_link('Go back to the Dictionary')
+    click_link('Dictionary')
     expect(page).to have_content('run')
   end
 
@@ -25,7 +25,7 @@ describe('the word path', {:type => :feature}) do
     visit('/words/new')
     fill_in('word', :with => 'run')
     click_button('Submit')
-    click_link('Go back to the Dictionary')
+    click_link('Dictionary')
     click_link('Add word')
     fill_in('word', :with => 'run')
     click_button('Submit')
@@ -37,7 +37,7 @@ describe('the word path', {:type => :feature}) do
     visit('/words/new')
     fill_in('word', :with => 'run')
     click_button('Submit')
-    click_link('Go back to the Dictionary')
+    click_link('Dictionary')
     click_link('run_remove')
     expect(page).to have_no_content('run')
   end
@@ -49,12 +49,12 @@ describe('the definition path', {:type => :feature}) do
     visit('/words/new')
     fill_in('word', :with => 'run')
     click_button('Submit')
-    click_link('Go back to the Dictionary')
+    click_link('Dictionary')
     click_link('run')
     click_link('Add definition')
     fill_in('part_of_speech', :with => 'verb')
     fill_in('meaning', :with => 'move at a speed faster than a walk')
     click_button('Submit')
-    expect(page).to have_content('verb: move at a speed faster than a walk')
+    expect(page).to have_content('move at a speed faster than a walk')
   end
 end
